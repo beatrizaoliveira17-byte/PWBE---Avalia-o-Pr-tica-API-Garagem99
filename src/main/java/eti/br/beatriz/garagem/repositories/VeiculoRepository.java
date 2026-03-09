@@ -2,6 +2,7 @@
 package eti.br.beatriz.garagem.repositories;
 
 import eti.br.beatriz.garagem.entities.Veiculo;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
@@ -9,5 +10,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  * @author digma
  */
 public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
-    
+    List<Veiculo> findByCorIgnoreCase(String cor);
 }

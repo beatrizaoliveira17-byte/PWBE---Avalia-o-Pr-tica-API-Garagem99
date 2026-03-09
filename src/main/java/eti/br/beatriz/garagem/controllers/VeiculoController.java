@@ -5,7 +5,9 @@ import eti.br.beatriz.garagem.entities.Veiculo;
 import eti.br.beatriz.garagem.repositories.service.VeiculoService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -32,7 +34,24 @@ public class VeiculoController {
     public List<Veiculo> findAll(){
     List<Veiculo> result = veiculoService.findAll();
     return result;
+    
+    }
+    
+    
+    @GetMapping("/color/{corName}")
+    public ResponseEntity<List<Veiculo>> findByCorIgnoreCase (@PathVariable String corName){
+        List<Veiculo> result = veiculoService.findByColor(corName);
+        
+        if(result.isEmpty()){
+            
+            return ResponseEntity.notFound().build();
+                    
+                    }else{
+            
+            return ResponseEntity.ok(result);
+        }
+    }
      
              
 }
-}
+

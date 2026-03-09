@@ -21,7 +21,8 @@ public class Veiculo {
     private int ano;
     private int km;
     private String avarias;
-
+    
+    
     @Column(name = "LINKIMAGEM")
     private String linkImagem;
 
