@@ -1,4 +1,3 @@
-
 package eti.br.beatriz.garagem.entities;
 
 import jakarta.persistence.Column;
@@ -11,22 +10,23 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "Veiculos")
 public class Veiculo {
- @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
- 
- private long id;
- private String marca;
- private String modelo;
- private String cor;
- private int ano;
- private int km;
- private String avarias;
 
- @Column(name = "LINKIMAGEM")
- private String linkImagem;
- 
- @Column(name = "DESCRICAOCOMPLETA")
- private String DescricaoCompleta;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private long id;
+    private String marca;
+    private String modelo;
+    private String cor;
+    private int ano;
+    private int km;
+    private String avarias;
+
+    @Column(name = "LINKIMAGEM")
+    private String linkImagem;
+
+    @Column(name = "DESCRICAOCOMPLETA")
+    private String DescricaoCompleta;
 
     public long getId() {
         return id;
