@@ -14,4 +14,5 @@ public interface VeiculoRepository extends JpaRepository<Veiculo, Long> {
     List<Veiculo> findByMarcaIgnoreCase(String marca);
     
     public List<Veiculo> findByAno (int ano);
+  Veiculo findById(int id);
 }

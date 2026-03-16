@@ -43,7 +43,10 @@ public class VeiculoService {
                List<VeiculoMinDTO> resultDTO = resultVeiculo.stream().map(x -> new VeiculoMinDTO(x)).toList();
                return resultDTO;
            }
-        
+        public Veiculo findById(int id){
+            Veiculo result = veiculoRepository.findById(id);
+            return result;
+        }
     }
 
 

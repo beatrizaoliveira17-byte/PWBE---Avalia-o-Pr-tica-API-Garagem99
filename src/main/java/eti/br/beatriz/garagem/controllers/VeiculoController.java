@@ -45,5 +45,16 @@ public class VeiculoController {
             return ResponseEntity.ok(result);
         }
     }
+    @GetMapping("/forsale/{idName}")
+     public ResponseEntity<Veiculo> findByid(@PathVariable int idName) {
+     Veiculo result = veiculoService.findById(idName);
+     
+     if (result == null){
+        
+         return ResponseEntity.notFound().build();
+     }else{
+         return ResponseEntity.ok(result);
+     }
 
+}
 }
